@@ -88,13 +88,46 @@ func main() {
 
 	//3. Operators & Punctuations
 	/*
-		Operators combine operands into expressions
-		Unary Operators: "+" | "-" | "!" | "^" | "*" | "&" | "<-"
-		Relational operators: "==" | "!=" | "<" | "<=" | ">" | ">="
-		Addition Operators: "+" | "-" | "|" | "^"
-		Multiplication Operators: "*" | "/" | "%" | "<<" | ">>" | "&" | "&^"
-		Binary Operators: "||" | "&&" | rel_op | add_op | mul_op
-		Comparisons operators: ==    equal, !=    not equal, <     less ,<=    less or equal ,>     greater ,>=    greater or equal
+			Operators combine operands into expressions
+			Unary Operators: "+" | "-" | "!" | "^" | "*" | "&" | "<-"
+			Relational operators: "==" | "!=" | "<" | "<=" | ">" | ">="
+			Addition Operators: "+" | "-" | "|" | "^"
+			Multiplication Operators: "*" | "/" | "%" | "<<" | ">>" | "&" | "&^"
+			Binary Operators: "||" | "&&" | rel_op | add_op | mul_op
+			Comparisons operators: ==    equal, !=    not equal, <     less ,<=    less or equal ,>     greater ,>=    greater or equal
+
+			For Binary operators the operands type must be identical, unless the operation involves shifts or untyped constants.
+			For operations involving constants , follow rules for constant expressions.
+			Constant expressions:
+								Constant expressions may contain only constant operands and are evaluated at compile time.
+
+
+		Go Constants Overiew:
+		Go is a statically typed language that does not permit operations that mix numeric types.
+		You can't add a float64 to an int, or even an int32 to an int. Yet it is legal to write 1e6*time.Second or math.Exp(1) or even 1<<('\t'+2.0).
+		In Go, constants, unlike variables, behave pretty much like regular numbers. There is no mixing of types in Go.
+		In Go, const is a keyword introducing a name for a scalar value such as 2 or 3.14159 or "scrumptious". Constants can be built from constant expressions.
+		There are many kinds of constants in Go:
+		1) Integers
+		2) Floats: he default type for a floating-point constant is float64, although an untyped floating-point constant can be assigned to a float32 value just fine.
+		3) Runes
+		4)Signed
+		5)Unsigned
+		6)Imaginary
+		7)Complex
+		8)String: Some text enclosed in double qoutes(""). Raw string literals are enclosed by backquotes (``).
+		Untyped String Constant: const hello = "Hello, 世界" is an untyped string constant, that it is a constant textual value that does not have a fixed type.
+		This constant hello does not have a type of string in Go and will be used as only textual value.
+		An untyped constant is just a value, one not yet given a defined type that would force it to obey the strict rules that prevent combining differently typed values.
+		Typed String Constant: const typedHello string = "Hello, worked!" is a typed string constant as we have explicitly defined the type this means typedHello
+		constant has a Go type string and cannot explicitly be assigned any other type. Assigning untyped variable to a variable of any type compatible with strings works without error.
+		It does, however, have a default type that is exposed when, and only when, no other type information is available.
+
+		Defualt types for numeric constants:
+		Integer constants default to int, floating-point constants float64, rune constants to rune (an alias for int32), and imaginary constants to complex128
+
+		9)Boolean:The values true and false are untyped boolean constants that can be assigned to any boolean variable, but once given a type, boolean variables cannot be mixed:
+		https://blog.golang.org/constants
 	*/
 
 	//4. Literals
