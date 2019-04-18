@@ -100,6 +100,27 @@ func main() {
 			For operations involving constants , follow rules for constant expressions.
 			Constant expressions:
 								Constant expressions may contain only constant operands and are evaluated at compile time.
+								Except for shift operations, if one operand is an untyped constant and the other operand is not, the constant
+								 is implicitly converted to the type of the other operand.
+								The right operand in a shift expression must have unsigned integer type or be an untyped constant representable
+								 by a value of type uint.
+								If the left operand of a non-constant shift expression is an untyped constant, it is first implicitly converted
+								 to the type it would assume if the shift expression were replaced by its left operand alone.
+			Arithmetic Operators in Go: Arithmetic operators apply to numeric values and yield a result of the same type as the first operand.
+			+          sum                  integers, floats, complex values, strings
+			-          difference           integers, floats, complex values
+			*          product              integers, floats, complex values
+			/          quotient             integers, floats, complex values
+
+			%          remainder            integers
+			&          bitwise AND          integers
+			|          bitwise OR           integers
+			^          bitwise XOR          integers
+			&^         bit clear (AND NOT)  integers
+
+			<<         left shift           integer << unsigned integer
+			>>         right shift          integer >> unsigned integer
+
 
 
 		Go Constants Overiew:
