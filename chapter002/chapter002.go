@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+//Because, at package level, every declaration should start with a keyword like var, const, func, type, and import.
+// illegal := 42 // will throw error at the package level
+var illegal int = 42
+
 func main() {
 
 	fmt.Print("Beginning of Chapter 2")
@@ -162,12 +166,14 @@ func main() {
 	//4. Literals
 
 	//Short declaration operator
+	// Can't use it twice to declare the same variable
 	x := 42 //declaration and assignment
 	fmt.Println(x)
+	fmt.Printf("%T", x)
 	x = 99 //assignment
 	fmt.Println(x)
 	y := 100 + 7
-	z := "James" + "Bond"
+	z := "James" + " Bond"
 	fmt.Println(y)
 	fmt.Println(z)
 }
