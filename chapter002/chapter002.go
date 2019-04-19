@@ -106,6 +106,14 @@ func main() {
 								 by a value of type uint.
 								If the left operand of a non-constant shift expression is an untyped constant, it is first implicitly converted
 								 to the type it would assume if the shift expression were replaced by its left operand alone.
+
+			Conversions in Go:A conversion changes the type of an expression to the type specified by the conversion.
+							  A conversion may appear literally in the source, or it may be implied by the context in which an expression appears.
+
+							  An explicit conversion is an expression of the form T(x) where T is a type and x is an expression that can be converted to type T.
+							  Conversion = Type "(" Expression [ "," ] ")" .
+							  If the type starts with the operator * or <-, or if the type starts with the keyword func and has no result list, it must be parenthesized when necessary to avoid ambiguity.
+
 			Arithmetic Operators in Go: Arithmetic operators apply to numeric values and yield a result of the same type as the first operand.
 			+          sum                  integers, floats, complex values, strings
 			-          difference           integers, floats, complex values
@@ -153,4 +161,13 @@ func main() {
 
 	//4. Literals
 
+	//Short declaration operator
+	x := 42 //declaration and assignment
+	fmt.Println(x)
+	x = 99 //assignment
+	fmt.Println(x)
+	y := 100 + 7
+	z := "James" + "Bond"
+	fmt.Println(y)
+	fmt.Println(z)
 }
