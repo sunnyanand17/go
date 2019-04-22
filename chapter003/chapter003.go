@@ -124,10 +124,36 @@ func main() {
 	//A new, initialized slice value for a given element type T is made using the built-in function make,
 	//which takes a slice type and parameters specifying the length and optionally the capacity.
 	//A slice created with make always allocates a new, hidden array to which the returned slice value refers.
-	var s3 = make([]string, 3, 5) // make is used to create an initialized slice value for a given element type T using the built-in function make.
+	var s3 = make([]string, 3) // make is used to create an initialized slice value for a given element type T using the built-in function make.
 	//
 	fmt.Println(len(s3))
 	fmt.Println(s3)
-	fmt.Println(cap(s3)) // cap() is used to find the capacity of the slice
+	//fmt.Println(cap(s3)) // cap() is used to find the capacity of the slice
+	s3[0] = "a"
+	s3[1] = "b"
+	s3[2] = "c"
+	fmt.Println("set:", s3)
+	fmt.Println("get: ", s3[0])
 
+	fmt.Println("len:", len(s3))
+
+	//append function in go
+	//The append built-in function appends elements to the end of a slice. If it has sufficient capacity, the destination is resliced to accommodate the new elements.
+	//If it does not, a new underlying array will be allocated. Append returns the updated slice. It is therefore necessary to store the result of append, often in the
+	//variable holding the slice itself:
+	fmt.Println(cap(s3))
+	fmt.Printf("%p is the address of the slice \n", s3)
+	s3 = append(s3, "d")
+	fmt.Printf("%p is the address of the slice \n", s3)
+	s3 = append(s3, "e", "f", "g")
+	fmt.Printf("%p is the address of the slice \n", s3)
+	fmt.Println("apd:", s3)
+	fmt.Println(len(s3))
+	fmt.Println(cap(s3))
+
+	// copy builtin function in go
+	c := make([]string, len(s3))
+	counts := copy(c, s3) // dest, src
+	fmt.Println(counts)
+	fmt.Println("cpy:", c) // reurns the number of elements copied
 }
