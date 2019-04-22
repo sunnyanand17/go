@@ -8,6 +8,15 @@ import (
 // illegal := 42 // will throw error at the package level
 var illegal int = 42
 
+// Declare there is a variable with the identifier z and the type of the varaible z is int
+// Assigns the zero value for type int to z. The value for integer is 0, boolean is false, float is 0.0, "" for strings
+// nil for pointers, interfaces, channels, slices, maps
+var z1 int
+
+var z2 string = "This is Go"
+
+//fmt.Printf("Type of the variable z is %T and its value is ",z)
+
 func main() {
 
 	fmt.Print("Beginning of Chapter 2")
@@ -165,9 +174,9 @@ func main() {
 
 	//4. Literals
 
-	//Short declaration operator
+	//Short declaration operator - can be used within a function body not at package level
 	// Can't use it twice to declare the same variable
-	x := 42 //declaration and assignment
+	x := 42 //declaration and assignment of a value of a particular type
 	fmt.Println(x)
 	fmt.Printf("%T", x)
 	x = 99 //assignment
@@ -176,4 +185,13 @@ func main() {
 	z := "James" + " Bond"
 	fmt.Println(y)
 	fmt.Println(z)
+
+	// var keyword can be used to declare variables at the package level
+	var x1 = 43
+	fmt.Println(x1)
+
+	fmt.Printf("The type of the varaible is %T and its zero value is %v \n", z1, z1)
+
+	fmt.Printf("The values of the variable is %T and its zero value is %v", z2, z2)
+
 }
